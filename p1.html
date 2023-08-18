@@ -1,0 +1,176 @@
+<html>
+    <head>
+        <title>heloo</title>
+    </head>
+    <style>
+        body{
+            background:url("R.jpg");
+            background-size: cover;
+        }
+        .cont{
+            background: rgba(255, 255, 255, 0.555);
+            padding: 12px;
+            position: relative;
+            top: 12pc;
+            width: 20pc;
+            left: 35pc;
+            border-radius: 12px;
+            padding-bottom: 56px;
+            border-style: solid;
+            border-color: rgb(255, 1, 1);
+            box-shadow: 0px 0px 65px rgb(253, 0, 0);
+        }
+        .i1{
+            background: rgb(0, 0, 0);
+            padding: 4px;
+            border-radius: 12px;
+            color: rgb(255, 253, 253);
+            text-decoration: none;
+            margin-bottom: 12px;
+            border-style: solid;
+            border-color: rgb(255, 5, 5);
+            align-items: center;
+
+        }
+        lable{
+            font-size: 15px;
+            font-family: Georgia;
+            font-weight: bold;
+            
+        }
+        p{
+            color: red;
+            animation-name: p1;
+            animation-duration: 5s;
+            animation-delay: 0s;
+            animation-iteration-count: 2;
+            font-weight: bold;
+        }
+        @keyframes p1 {
+            from{
+                opacity: 0px
+            }
+            to{
+                opacity: 0px;
+            }
+        }
+        
+        .btn1{
+            background: rgba(0, 0, 0, 0.507);
+            padding: 8px;
+            border-radius: 12px;
+            border-style: solid;
+            border-color: white;
+            box-shadow: 0px 0px 45px rgb(0, 0, 0);
+            color: white;
+            text-decoration: none;
+
+        }
+    </style>
+    <body>
+        <div class="cont">
+            <h1 style="font-family: cursive; font-weight: bold;"> Sign up </h1>
+            <lable>First name:     </lable> <input type="text" placeholder="First name" class="i1" id="a" onmouseout="fun1()"><br>
+            <p id="z1"></p>
+            <lable>Middle name      :</lable> <input type="text" placeholder="Middle name" class="i1" id="a2" onmouseover="a2()" maxlength="1"><br>
+            <p id="z2"></p>
+            <lable>last name</lable> <input type="text" placeholder="last name" class="i1" id="a3" onmouseover="fun3()"><br>
+            <p id="z3"></p>
+            <lable>Course name</lable> <select class="i1" id="v1">
+                <option>SC</option>
+                <option>PT</option>
+                <option>ME</option>
+                <option>ENC</option>
+                <option>CIVIL</option>
+                <option>OTHERS</option>
+            </select><br>
+            <lable>Gender</lable> Male <input type="radio" name="rahu"  id="12" class="i1"> female <input type="radio" id="12" name="rahu"><br>
+            <lable>D.O.B</lable> <input type="date" class="i1" id="v2"><br>
+            <lable>phone number</lable> <input type="tel" maxlength="10" class="i1" placeholder="phone number" onmouseover="fun5()" id="fun5"><br>
+            <p id="z4">h</p>
+            <lable>Address</lable> <textarea placeholder="Enter your permanent address" class="i1" id="v3"></textarea><br>
+            <lable>E-mail</lable> <input type="email" placeholder="valid Email" class="i1" id="v4"><br>
+            <lable>Password</lable> <input type="password" placeholder="password" class="i1" id="v5"><br>
+            <lable>Re-enter Password</lable><input type="password" class="i1" placeholder="Re-Enter your password"><br>
+            <input type="submit" class="btn1" onclick="save()">
+            <a href="login.html" class="btn1">Log in</a>
+
+            <br>
+            <input type="search" id="src">
+            <button id="srch()">Search</button>
+            <p id="srch">c</p>
+            <script>
+                function fun1(){
+    var x=document.getElementById("a").value;
+    var ex=/^[A-Z a-z]+$/
+
+    if(x==""){
+        document.getElementById("z1").innerHTML="please fill out this field";
+
+    }
+    else if(!ex.test(x)){
+        document.getElementById("z1").innerHTML="Please Enter Valid First name";
+
+    }
+    else{
+        document.getElementById("z1").innerHTML="";
+
+    }
+}
+function a2() {
+    let x1=document.getElementById("a2").value;
+    let ex1=/^[A-Z a-z]+$/
+    if(x==""){
+        document.getElementById("z2").innerHTML="please fill out this field";
+    }
+    
+}
+function fun3(){
+    var x11=document.getElementById("a3").value;
+    var ex111=/^[A-Z a-z]+$/
+
+    if(x11==""){
+        document.getElementById("z3").innerHTML="please fill out this field";
+
+    }
+    else if(!ex111.test(x11)){
+        document.getElementById("z3").innerHTML="Please Enter Valid First name";
+
+    }
+    else{
+        document.getElementById("z3").innerHTML="";
+
+    }
+}
+function fun5(){
+    let x12=document.getElementById("fun5").value;
+    var ex122=/^[0-9]{10}$/
+    if(x12==""){
+        document.getElementById("z4").innerHTML="please fill out this field";
+
+    }
+    else if(!ex122.test(x12)){
+        document.getElementById("z4").innerHTML="use numbers 0-9 only";
+
+}
+}
+
+
+
+
+//Saving data to local storage
+function save(){
+    let fname=getElementById("a").value;
+    let psd=getElementById("v5").value;
+    localStorage.setItem(username,fname)
+    localStorage.setItem(password,psd)
+    alert("saved")
+    let vari= localStorage.getItem(username)
+    let vari1= localStorage.getItem(password)
+    srch.innerText=vari
+    srch.innerText=vari1
+
+    }
+
+
+            </script>

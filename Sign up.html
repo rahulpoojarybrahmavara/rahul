@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+</head>
+
+    <style>
+        body{
+            background: url(R.jpg);
+            
+        }
+        .blkstrip{
+            background: #000000;
+            padding: 18px;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            position: relative;
+            top: -10px;
+            left: -12px;
+            color: white;
+        }
+        .hme{
+            color: black;
+            text-decoration: none;
+            padding: 7px;
+            border-radius: 12px;
+            border-style: solid;
+            border-color: #8f00ff;
+        }
+        .hmen{
+            color: black;
+            text-decoration: none;
+            padding: 7px;
+            border-radius: 12px;
+            border-style: solid;
+            border-color: #8f00ff;
+            padding: 10px;
+            margin-top: 5px;
+            font-weight: bold;
+            position: relative;
+            left: 10pc;
+        }
+        .hmen2{
+            color: black;
+            text-decoration: none;
+            padding: 7px;
+            border-radius: 12px;
+            border-style: solid;
+            border-color: #8f00ff;
+            padding: 10px;
+            margin-top: 5px;
+            font-weight: bold;
+            position: relative;
+            left: 6pc;
+        }
+       
+        .cont{
+            background: #ffffff72;
+            padding: 15px;
+            height: 745px;
+            width: 124px;
+            opacity: 0;
+            position: relative;
+            top: -250px;
+            left: -12px;
+            filter: blur(13%);
+        }
+        .container{
+            background: #ffffff8b;
+            padding: 12px;
+            border-radius: 12px;
+            width: 14pc;
+            position: relative;
+            left: 3pc;
+            top: 18pc;
+            border-style: solid;
+            border-color: #8f00ff;
+            box-shadow: 0px 0px 65px purple;
+        }
+        .container2{
+            background: #ffffff8b;
+            padding: 12px;
+            border-radius: 12px;
+            width: 14pc;
+            position: relative;
+            left: 3pc;
+            top: -7.9pc;
+            z-index: 5;
+            visibility: hidden;
+        }
+        .container3{
+            background: #ffffff8b;
+            padding: 12px;
+            border-radius: 12px;
+            width: 14pc;
+            position: relative;
+            left: 3pc;
+            top: -38.9rem;
+            z-index: 5;
+            visibility: hidden;
+        }
+        .im1{
+            width: 18pc;
+            align-items: center;
+            position: relative;
+            left: 30px;
+            bottom: -95px;
+            box-shadow: 10px 0px 80px red;
+        }
+        .notif{
+            background: #ffffff72;
+            padding: 15px;
+            height: 200px;
+            width: 200px;
+            opacity: 1;
+            filter: blur(13%);
+            position: relative;
+            left: 4px;
+            top: -900px;
+            margin-left: 34px;
+        }
+        p{
+            color: red;
+            font-weight: bold;
+        }
+        .xn{
+            color: black;
+            text-decoration: none;
+            padding: 7px;
+            border-radius: 12px;
+            border-style: solid;
+            border-color: #8f00ff;
+        }
+        #warn{
+            color: greenyellow;
+        }
+    
+    </style>
+    <body>
+        <div id="abc" class="container">
+            <h1 id="h1">signup</h1>
+            <h4 id="h2">First name:</h4>
+            <input type="text" placeholder="Firstname" class="hme" id="a"><br>
+            <h4 id="h3">Middle name:</h4>
+            <input type="text" placeholder="Midname" class="hme" id="b">
+            <h4 id="h4">Last name:</h4>
+            <input type="text" placeholder="Lastname" class="hme" id="c"><br>
+            <button id="h5" class="hmen" onclick="btn()"> Next</button>
+        </div>
+        <!-- page 2 -->
+        <div id="def" class="container2">
+            <h1 id="h1">Personal details</h1>
+            <h4 id="h2">Date Of Birth:</h4>
+            <input type="date" placeholder="Firstname" class="hme" id="d"><br>
+            <h4 id="h3">Email-id:</h4>
+            <input type="email" placeholder="Email" class="hme" id="e">
+            <h4 id="h4">Phone number:</h4>
+            <input type="number" placeholder="1234567890" class="hme" id="f" maxlength="12"><br>
+            <button id="h5" class="hmen" onclick="btn2()">Next </button>
+            
+            
+        </div>
+        <!-- page 3 -->
+        <div id="hij" class="container3">
+            <h1 id="h1">Password</h1>
+            <h4 id="h2">Password:</h4>
+            <input type="Password" placeholder="Password" class="hme" id="ax"><br>
+            <h4 id="h3">re-enter:</h4>
+            <input type="Password" placeholder="re-enter-password" class="hme" id="bx"><br>
+            <p id="warn"></p>
+            <a href="#" class="hme" onclick="sign()">Sign in</a>
+            <button id="ho" class="hmen2" onclick="btn2()"> Next</button>
+            <button id="ho" class="xn" onclick="btn3()"> Back</button>
+            <p id="err"></p>
+            <p id="warn"></p>
+        </div>
+        <script>
+            function btn(){
+             document.getElementById("abc").style.visibility='hidden';
+             document.getElementById("def").style.visibility='visible';
+                
+                        
+                
+            }
+            function btn2(){
+                document.getElementById("def").style.visibility='hidden';
+                document.getElementById("hij").style.visibility='visible';
+                document.getElementById("ho").style.visibility='hidden';
+            }
+            function btn3(){
+                document.getElementById("abc").style.visibility='visible';
+                document.getElementById("def").style.visibility='hidden';
+                document.getElementById("hij").style.visibility='hidden';
+            }
+            function sign(){
+                let az=document.getElementById("a").value;
+                let ay=document.getElementById("ax").value;
+                let an=document.getElementById("ax").value;
+                let warn=document.getElementById("warn");
+                let err=document.getElementById("err");
+                console.log(az)
+                localStorage.setItem("username",az)
+                localStorage.setItem("password",ay)
+                warn.innerText="saved"
+                alert("saved")
+                if (ay==an) {
+                    warn.innerText="Good"
+                }
+                else{
+                    err.innerText="Password not matching";
+                }
+                let x12=document.getElementById("a").value;
+        var ex122=/^[A-Z a-z]+$/
+        if(x12==""){
+            document.getElementById("err").innerHTML="first name is requaired*";
+    
+        }
+        else if(!ex122.test(x12)){
+            document.getElementById("err").innerHTML="Dont use numbers in your fname";
+            
+        }
+    }
+                
+               
+        </script>
+    </body>
+
+    function fun5(){
+        
+    }
+
